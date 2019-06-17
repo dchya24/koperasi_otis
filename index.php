@@ -57,12 +57,12 @@
 	$user = "dchya24";
 	$pass = "cahya24";
 
-	die(print_r(PDO::getAvailableDrivers()));
+	// die(print_r(PDO::getAvailableDrivers()));
 
 	try{
 		$con = new PDO("sqlsrv:server = $server; Database = $db", "$user", "$pass");
 		$con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		
+		print_r($con);
 	}catch(PDOException $e){
 		print_r($e);
 		die;
