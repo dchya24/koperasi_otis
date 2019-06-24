@@ -143,8 +143,8 @@ define("BASE_DIR", __DIR__);
 							</div>
 						</div>
 
-						<div class="col-lg-6">
-							<img src="" alt="" id="image" class="img-fluid">
+						<div class="col-lg-6 text-center">
+							<img src="" alt="" id="image" class="img-fluid img-thumbnail">
 						</div>
 						<div class="form-group col-lg-6">
 							Keterangan : 
@@ -231,6 +231,7 @@ define("BASE_DIR", __DIR__);
 			type: "POST",
 			data: `{ "url" : '${url_data}' }`
 		}).done((data) => {
+			$("#keterangan").parent().siblings().removeClass('d-none')
 			$("#keterangan").val(JSON.stringify(data, null, 2))
 		}).fail(function(jqXHR, textStatus, errorThrown) {
 				// Display error message.
