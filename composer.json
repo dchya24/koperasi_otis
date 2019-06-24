@@ -1,0 +1,16 @@
+{
+    "name": "dchya24/koperasi_otis",
+    "type": "project",
+    "authors": [
+        {
+            "name": "dchya24",
+            "email": "cahyadinar241@gmail.com"
+        }
+    ],
+    "require": {
+        "microsoft/azure-storage-blob": "*",
+        "microsoft/azure-storage-table": "*",
+        "microsoft/azure-storage-queue": "*",
+        "microsoft/azure-storage-file": "*"
+    }
+}
