@@ -23,50 +23,6 @@ define("BASE_DIR", __DIR__);
 
 	$createCointainerOptions->setPublicAccess(PublicAccessType::CONTAINER_AND_BLOBS);
 
-	// $createCointainerOptions->addMetadata("key1", "val1");
-	// $createCointainerOptions->addMetadata("key2", "val2");
-
-
-	// try {
-	// 	$blobClient->createContainer($containerName, $createCointainerOptions);
-	// }catch(Exception $r){
-	// 	print_r($r);
-	// }
-
-	// $myfile = fopen("hello.txt", "w") or die("Unable to open file!");
-	// fclose($myfile);
-	 
-	# Mengunggah file sebagai block blob
-	// echo "Uploading BlockBlob: ";
-	// echo $fileToUpload;
-	// echo "<br />";
-	 
-	// $content = fopen($fileToUpload, "r");
-
-	// Mengunggah blob
-	// try{
-	// 	$blobClient->createBlockBlob($containerName, "hello_world.txt", $content);
-	// }catch(Exception $r){
-	// 	print_r($r);
-	// }
-
-	// $listBlobsOptions = new ListBlobsOptions();
-	// $listBlobsOptions->setPrefix("hello");
-
-	// echo "These are the blobs present in the container: ";
-	// $array = [];
-	// do{
-	// 		$result = $blobClient->listBlobs($containerName, $listBlobsOptions);
-	// 		foreach ($result->getBlobs() as $blob)
-	// 		{
-					// echo $blob->getName().": ".$blob->getUrl()."<br />";
-			// }
-	
-			// $listBlobsOptions->setContinuationToken($result->getContinuationToken());
-// 	} while($result->getContinuationToken());
-// var_dump($array[0]);
-
-// die;
 ?>
 <!DOCTYPE html>
 <html lang="en">
