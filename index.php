@@ -145,9 +145,9 @@ define("BASE_DIR", __DIR__);
 						<div class="col-lg-6 text-center">
 							<img src="" alt="" id="image" class="img-fluid img-thumbnail">
 						</div>
-						<div class="form-group col-lg-6 py-2">
-							<div id="desc">
-							</div>
+						<div class="form-group col-lg-6 py-2 d-none" id="parent">
+							<div id="desc" class="btn btn-secondary">
+							</div> <br>
 							Keterangan : 
 							<textarea class="form-control" name="" id="keterangan" rows="10" disabled></textarea>
 						</div>
@@ -233,10 +233,9 @@ define("BASE_DIR", __DIR__);
 			data: `{ "url" : '${url_data}' }`
 		}).done((data) => {
 			let desc = data.description.captions
-			$("#desc").append("")
+			$("#parent").removeClass("d-none");
 
-			var cont = `<span class='btn btn-secondary mb-2'> ${desc[0].text} </span> <br>`
-			$("#desc").append(cont)
+			$("#desc").html(desc[0].text)
 
 			$("#keterangan").parent().siblings().removeClass('d-none')
 			$("#keterangan").val(JSON.stringify(data, null, 2))
