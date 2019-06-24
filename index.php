@@ -32,7 +32,7 @@ define("BASE_DIR", __DIR__);
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-	<title>Tulis Keluhan Anda</title>
+	<title>Submission 2 - Azure</title>
 </head>
 <body>
 <div class="container-fluid">
@@ -139,16 +139,17 @@ define("BASE_DIR", __DIR__);
 							<div class="form-group row">
 								<div class="offset-4 col-6 col-sm-1-12">
 									<button class="btn btn-sm btn-outline-primary" onclick="analyzeGambar()"> Analyze Gambar </button>
-								</div>
+								</div> 
 							</div>
 						</div>
-
 						<div class="col-lg-6 text-center">
 							<img src="" alt="" id="image" class="img-fluid img-thumbnail">
 						</div>
-						<div class="form-group col-lg-6">
+						<div class="form-group col-lg-6 py-2">
+							<div id="desc">
+							</div>
 							Keterangan : 
-							<textarea class="form-control" name="" id="keterangan" rows="25" disabled></textarea>
+							<textarea class="form-control" name="" id="keterangan" rows="10" disabled></textarea>
 						</div>
 				</div>
 			</div>
@@ -231,6 +232,12 @@ define("BASE_DIR", __DIR__);
 			type: "POST",
 			data: `{ "url" : '${url_data}' }`
 		}).done((data) => {
+			let desc = data.description.captions
+			$("#desc").append("")
+
+			var cont = `<span class='btn btn-secondary mb-2'> ${desc[0].text} </span> <br>`
+			$("#desc").append(cont)
+
 			$("#keterangan").parent().siblings().removeClass('d-none')
 			$("#keterangan").val(JSON.stringify(data, null, 2))
 		}).fail(function(jqXHR, textStatus, errorThrown) {
